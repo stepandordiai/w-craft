@@ -272,7 +272,7 @@ const Home = () => {
 						<p>секунд(а)</p>
 					</div>
 				</div>
-				<p className="page-desc">В кінці буде феєрверк!</p>
+				{/* <p className="page-desc">В кінці буде феєрверк!</p> */}
 			</div>
 			<p className="page-title">Святкуйте з нами!</p>
 		</main>
