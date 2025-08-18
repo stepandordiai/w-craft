@@ -86,9 +86,9 @@ const Home = () => {
 					<div className="divider"></div>
 					<div className="home__top-date">
 						<p>28</p>
-						<p>&bull;</p>
+						<span>&bull;</span>
 						<p>08</p>
-						<p>&bull;</p>
+						<span>&bull;</span>
 						<p>25</p>
 					</div>
 					<h1 className="home__top-title">
@@ -162,6 +162,9 @@ const Home = () => {
 			</p>
 			<div className="addresses-container">
 				<p className="addresses__title">Адреси святкування</p>
+				<p style={{ marginBottom: 25 }} className="page-desc">
+					(місцевий час, Прага)
+				</p>
 				<div className="addresses">
 					<div className="address">
 						<p className="address__title">
@@ -269,6 +272,7 @@ const Home = () => {
 						<p>секунд(а)</p>
 					</div>
 				</div>
+				<p className="page-desc">В кінці буде феєрверк!</p>
 			</div>
 			<p className="page-title">Святкуйте з нами!</p>
 		</main>

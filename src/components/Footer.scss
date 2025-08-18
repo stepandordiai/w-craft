@@ -7,13 +7,15 @@
 	padding: 50px 0;
 	background: var(--olive-clr);
 	color: var(--brown-clr);
-	font-family: "Playpen Sans", cursive;
+	// font-family: "Playpen Sans", cursive;
+	font-family: "Nata Sans", sans-serif;
 }
 
 .footer__btn {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	gap: 5px;
 }
 
 .creator__link {

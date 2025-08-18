@@ -38,7 +38,6 @@
 		display: inline-block;
 		font-size: 1.5rem;
 		padding: 0 5px;
-		// transform: translateY(50%);
 	}
 }
 
@@ -49,12 +48,18 @@
 }
 
 .home__top-date {
-	// font-family: "Playpen Sans", cursive;
-	font-size: clamp(3rem, 4vw, 4rem);
+	font-family: "Nata Sans", sans-serif;
+	font-weight: 300;
+	font-size: clamp(2rem, 4vw, 4rem);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	gap: 10px;
 	width: 100%;
+
+	span {
+		font-size: 1.5rem;
+	}
 }
 
 .home__top-img-bg {
@@ -82,7 +87,9 @@
 }
 
 .calendar {
-	font-family: "Playpen Sans", cursive;
+	// font-family: "Playpen Sans", cursive;
+	font-family: "Nata Sans", sans-serif;
+
 	display: grid;
 	grid-template-columns: repeat(7, 50px);
 	grid-template-rows: repeat(6, 50px);
@@ -114,7 +121,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background: #fff;
-	font-family: "Playpen Sans", cursive;
+	font-family: "Nata Sans", sans-serif;
 	padding: 0 25px;
 	width: max-content;
 	font-size: clamp(1rem, 2vw, 1.25rem);
@@ -136,13 +143,22 @@
 	width: 100%;
 }
 
+.page-desc {
+	text-align: center;
+	font-size: clamp(1.75rem, 4vw, 2.25rem);
+	text-decoration-line: underline;
+	text-decoration-color: var(--olive-clr);
+	text-decoration-thickness: 5px;
+	text-decoration-skip-ink: none;
+}
+
 .date {
-	font-family: "Playpen Sans", cursive;
+	font-family: "Nata Sans", sans-serif;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 	gap: 10px;
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 
 	p:nth-child(1) {
 		text-align: center;
@@ -198,7 +214,6 @@
 
 .addresses {
 	display: flex;
-	// justify-content: flex-end;
 	gap: 50px;
 	width: 100%;
 	padding: 0 50px;
@@ -208,8 +223,6 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	flex-grow: 1;
-	// flex-shrink: 0;
 }
 
 .address__title {
@@ -227,7 +240,7 @@
 }
 
 .address__info {
-	font-family: "Playpen Sans", cursive;
+	font-family: "Nata Sans", sans-serif;
 }
 
 .map {
@@ -238,7 +251,7 @@
 }
 
 .address__link {
-	font-family: "Playpen Sans", cursive;
+	font-family: "Nata Sans", sans-serif;
 	color: #fff;
 	background: var(--brown-clr);
 	padding: 10px;
