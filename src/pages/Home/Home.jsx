@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
-import img from "/bg.jpg";
+import img from "/bg-c.jpg";
 import heartIcon from "/heart2.png";
 import img1 from "/01.JPG";
 import img2 from "/02.JPG";
