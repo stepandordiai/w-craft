@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
-import img from "/bg-c.jpg";
+import img from "/corner.svg";
+import img2 from "/underline.svg";
 import heartIcon from "/heart2.png";
 import data from "./../../assets/data/data.json";
 
@@ -9,10 +10,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/effect-cards";
+// import "swiper/css/effect-cards";
+import "swiper/css/effect-fade";
 
 // import required modules
-import { EffectCards } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
 
 import { useParams } from "react-router-dom";
 
@@ -25,10 +27,10 @@ const EnvelopeSilver = () => {
 
 	// TODO:
 	const targetDate = new Date(envelope.countdown);
-	const [days, setDays] = useState("0");
-	const [hours, setHours] = useState("0");
-	const [minutes, setMinutes] = useState("0");
-	const [seconds, setSeconds] = useState("0");
+	const [days, setDays] = useState(0);
+	const [hours, setHours] = useState(0);
+	const [minutes, setMinutes] = useState(0);
+	const [seconds, setSeconds] = useState(0);
 
 	useEffect(() => {
 		let interval = setInterval(() => {
@@ -48,6 +50,26 @@ const EnvelopeSilver = () => {
 				handleClick();
 			}
 		}, 1000);
+
+		const animatedElements = document.querySelectorAll(".animated-element");
+
+		window.addEventListener("scroll", () => {
+			animatedElements.forEach((el) => {
+				const elRect = el.getBoundingClientRect();
+
+				if (elRect.top < window.innerHeight - 100) {
+					el.classList.add("animated-element--active");
+				}
+			});
+		});
+
+		animatedElements.forEach((el) => {
+			const elRect = el.getBoundingClientRect();
+
+			if (elRect.top < window.innerHeight - 100) {
+				el.classList.add("animated-element--active");
+			}
+		});
 	}, []);
 
 	const handleClick = () => {
@@ -94,10 +116,12 @@ const EnvelopeSilver = () => {
 
 	const days2 = [];
 
-	const firstDay = new Date(2025, 7, 1); // August 1, 2025
+	const firstDay = new Date(envelope.year, envelope.month - 1, 1); // August 1, 2025
 	let startWeekday = firstDay.getDay(); // 0 = Sunday, 1 = Monday, ...
 
-	const febDayNumbers = getDaysOfMonth(2025, 7).map((d) => d.getDate());
+	const febDayNumbers = getDaysOfMonth(envelope.year, envelope.month - 1).map(
+		(d) => d.getDate()
+	);
 
 	startWeekday = (startWeekday + 6) % 7; // now Monday=0, Tuesday=1, ...
 
@@ -147,98 +171,190 @@ const EnvelopeSilver = () => {
 			txtMonth = "Грудень";
 			break;
 	}
+
+	useEffect(() => {
+		const scroll = document.querySelector(".scroll");
+
+		window.addEventListener("scroll", () => {
+			if (document.documentElement.scrollTop > 0) {
+				scroll.classList.add("scroll--hide");
+			} else {
+				scroll.classList.remove("scroll--hide");
+			}
+		});
+	}, []);
 	return (
-		<main className="home">
-			<div className="home__top">
-				<img className="home__top-img-bg" src={img} alt="" />
-				<div className="home__top-inner">
-					<div className="home__top-logo">
-						А<span>&</span>Н
-					</div>
-					<div className="divider"></div>
-					<div className="home__top-date">
+		<main className="envelope-silver">
+			<div className="envelope-silver__top frame">
+				<img className="corner-top-right" src={img} alt="" />
+				<img className="corner-bottom-right" src={img} alt="" />
+				<img className="corner-bottom-left" src={img} alt="" />
+				<img className="corner-top-left" src={img} alt="" />
+
+				<div className="envelope-silver__top-logo animated-element">
+					<span>{envelope.name_1[0]}</span>
+					<span>{envelope.name_2[0]}</span>
+				</div>
+				{/* <div className="divider"></div> */}
+				{/* <div className="home__top-date">
 						<p>{envelope.date}</p>
-						<span>&bull;</span>
+						<span>/</span>
 						<p>{envelope.month.toString().padStart(2, 0)}</p>
-						<span>&bull;</span>
+						<span>/</span>
 						<p>{envelope.year.toString().slice(2)}</p>
+					</div> */}
+				{/* <div> */}
+				{/* <div> */}
+				<div className="envelope-silver__top-title animated-element">
+					<span>{envelope.name_1}</span>
+					<span>та</span>
+					<span>{envelope.name_2}</span>
+				</div>
+				{/* <img className="underline" src={img2} alt="" /> */}
+				{/* </div> */}
+				<p className="envelope-silver__top-date animated-element">
+					Неділя, 14 Вересня, 2025
+				</p>
+				<div className="font scroll animated-element">
+					Прокрутіть вниз, щоб дізнатися більше
+				</div>
+			</div>
+			<div className="frame">
+				<img className="corner-top-right" src={img} alt="" />
+				<img className="corner-bottom-right" src={img} alt="" />
+				<img className="corner-bottom-left" src={img} alt="" />
+				<img className="corner-top-left" src={img} alt="" />
+				<div className="frame-inner">
+					<p className="m-size animated-element">Дорогі гості</p>
+					<p className="desc font animated-element">
+						Ми надзвичайно раді поділитися з Вами цим особливим днем!
+						<br />
+						<br />
+						Розпочинаючи нашу спільну подорож, ми будемо щасливі, якщо Ви
+						приєднаєтеся до святкування нашого весілля.
+						<br />
+						<br />
+						Тут ви знайдете всю необхідну інформацію - розклад подій, зворотний
+						відлік, інформацію про місце проведення, галерею та інше.
+						<br />
+						<br />
+						Ваша присутність для нас безцінна, і ми з нетерпінням чекаємо, щоб
+						розділити радість, сміх і любов цього дня.
+						<br />
+						<br />
+					</p>
+					<div className="silver-calendar-wrapper animated-element">
+						<p className="silver-calendar-top">{`${txtMonth} ${envelope.year}`}</p>
+						<div className="silver-calendar">
+							<div>Пн</div>
+							<div>Вт</div>
+							<div>Ср</div>
+							<div>Чт</div>
+							<div>Пт</div>
+							<div>Сб</div>
+							<div>Нд</div>
+							{days2.map((day, index) => {
+								return (
+									<div
+										key={index}
+										className={day === envelope.date ? "target-time" : ""}
+									>
+										{day}
+										{day === envelope.date && (
+											<img className="calendar-heart" src={heartIcon} alt="" />
+										)}
+									</div>
+								);
+							})}
+						</div>
 					</div>
-					<h1 className="home__top-title">
-						<span>{envelope.name_1}</span>
-						<span> та </span>
-						<span>{envelope.name_2}</span>
-					</h1>
+					<p className="s-size animated-element">
+						Давайте створимо спогади, які залишаться на все життя!
+					</p>
+				</div>
+			</div>
+			<div className="frame">
+				<img className="corner-top-right" src={img} alt="" />
+				<img className="corner-bottom-right" src={img} alt="" />
+				<img className="corner-bottom-left" src={img} alt="" />
+				<img className="corner-top-left" src={img} alt="" />
+				<div className="frame-inner">
+					<p className="m-size animated-element">
+						Зворотний відлік до нашого Великого дня
+					</p>
+					<div className="font silver-date animated-element" id="date">
+						<div>
+							<span>{days}</span>
+							<span>днів</span>
+						</div>
+						<div>
+							<span>{hours}</span>
+							<span>годин(а)</span>
+						</div>
+						<div>
+							<span>{minutes}</span>
+							<span>хвилин(а)</span>
+						</div>
+						<div>
+							<span>{seconds}</span>
+							<span>секунд(а)</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="frame">
+				<img className="corner-top-right" src={img} alt="" />
+				<img className="corner-bottom-right" src={img} alt="" />
+				<img className="corner-bottom-left" src={img} alt="" />
+				<img className="corner-top-left" src={img} alt="" />
+				<div className="frame-inner">
+					<div>
+						<p className="m-size animated-element">Адреси святкування</p>
+						<p className="font animated-element">{`(місцевий час, ${envelope.place})`}</p>
+					</div>
+					<div className="silver-addresses">
+						{envelope.adresess.map((address, index) => {
+							return (
+								<div key={index} className="silver-address">
+									<p
+										style={{ display: "flex", justifyContent: "space-between" }}
+										className="s-size animated-element"
+									>
+										<span>{address.title}</span>
+										<span>{address.time}</span>
+									</p>
+									<br />
+									<p className="font animated-element">
+										{address.address_title}
+									</p>
+									<br />
+									<p
+										style={{ marginBottom: 10 }}
+										className="font animated-element"
+									>
+										{address.address}
+									</p>
+									<br />
+									<iframe
+										className="silver-map animated-element"
+										src={address.address_url}
+										loading="lazy"
+									></iframe>
+									<br />
+									<a
+										className="silver-address__link animated-element"
+										href={address.address_destination_url}
+										target="_blank"
+									>
+										Отримати маршрут
+									</a>
+								</div>
+							);
+						})}
+					</div>
 				</div>
 			</div>
 
-			<div>
-				<p className="pepe">
-					<span>Дорогі гості,</span>
-					<br />
-					Щиро запрошуємо вас на свято, присвячене створенню нашої сім'ї, яке
-					відбудеться:
-				</p>
-			</div>
-			<div className="calendar-wrapper">
-				<p className="calendar-top">{`${txtMonth} ${envelope.year}`}</p>
-				<div className="calendar">
-					<div>Пн</div>
-					<div>Вт</div>
-					<div>Ср</div>
-					<div>Чт</div>
-					<div>Пт</div>
-					<div>Сб</div>
-					<div>Нд</div>
-					{days2.map((day, index) => {
-						return (
-							<div key={index} className={day === 28 ? "target-time" : ""}>
-								{day}
-								{day === 28 && (
-									<img className="calendar-heart" src={heartIcon} alt="" />
-								)}
-							</div>
-						);
-					})}
-				</div>
-			</div>
-			<p className="pepe">
-				І ми не уявляємо цей радісний день без Вас - близьких і дорогих нам
-				людей!
-			</p>
-			<div className="addresses-container">
-				<p className="addresses__title">Адреси святкування</p>
-				<p style={{ marginBottom: 25 }} className="page-desc">
-					(місцевий час, {envelope.place})
-				</p>
-				<div className="addresses">
-					{envelope.adresess.map((address, index) => {
-						return (
-							<div key={index} className="address">
-								<p className="address__title">
-									<span>{address.title}</span>
-									<span>{address.time}</span>
-								</p>
-								<p className="address__info">{address.address_title}</p>
-								<p style={{ marginBottom: 10 }} className="address__info">
-									{address.address}
-								</p>
-								<iframe
-									className="map"
-									src={address.address_url}
-									loading="lazy"
-								></iframe>
-								<a
-									className="address__link"
-									href={address.address_destination_url}
-									target="_blank"
-								>
-									Отримати маршрут
-								</a>
-							</div>
-						);
-					})}
-				</div>
-			</div>
 			{/* <div className="colors-container">
 				<p className="page-title">Дрес-код</p>
 				<div>
@@ -252,46 +368,49 @@ const EnvelopeSilver = () => {
 					</div>
 				</div>
 			</div> */}
-			<div className="gallery">
-				<p className="page-title">Галерея</p>
-				<Swiper
-					effect={"cards"}
-					grabCursor={true}
-					modules={[EffectCards]}
-					className="mySwiper"
-				>
-					{envelope.gallery.map((img, index) => {
-						return (
-							<SwiperSlide key={index} className="slide">
-								<img src={img} alt="" />
-							</SwiperSlide>
-						);
-					})}
-				</Swiper>
+			<div className="frame">
+				<img className="corner-top-right" src={img} alt="" />
+				<img className="corner-bottom-right" src={img} alt="" />
+				<img className="corner-bottom-left" src={img} alt="" />
+				<img className="corner-top-left" src={img} alt="" />
+				<div className="frame-inner">
+					<p className="m-size animated-element">Галерея</p>
+					<Swiper
+						effect={"fade"}
+						loop={true}
+						speed={1000}
+						autoplay={{
+							delay: 3000,
+							disableOnInteraction: false,
+						}}
+						modules={[EffectFade, Autoplay]}
+						className="silver-swiper animated-element"
+					>
+						{envelope.gallery.map((img, index) => {
+							return (
+								<SwiperSlide key={index} className="slide">
+									<img src={img} alt="" loading="lazy" />
+								</SwiperSlide>
+							);
+						})}
+					</Swiper>
+				</div>
 			</div>
-			<div className="date-container">
-				<p className="page-title">Святкування почнеться через:</p>
-				<div className="date" id="date">
-					<div>
-						<p>{days}</p>
-						<p>днів</p>
-					</div>
-					<div>
-						<p>{hours}</p>
-						<p>годин(а)</p>
-					</div>
-					<div>
-						<p>{minutes}</p>
-						<p>хвилин(а)</p>
-					</div>
-					<div>
-						<p>{seconds}</p>
-						<p>секунд(а)</p>
+			<div className="frame">
+				<img className="corner-top-right" src={img} alt="" />
+				<img className="corner-bottom-right" src={img} alt="" />
+				<img className="corner-bottom-left" src={img} alt="" />
+				<img className="corner-top-left" src={img} alt="" />
+				<div className="frame-inner">
+					<p className="m-size animated-element">
+						Ми з нетерпінням чекаємо, щоб відсвяткувати разом з вами!
+					</p>
+					<div className="envelope-silver__top-logo animated-element">
+						<span>{envelope.name_1[0]}</span>
+						<span>{envelope.name_2[0]}</span>
 					</div>
 				</div>
-				{/* <p className="page-desc">В кінці буде феєрверк!</p> */}
 			</div>
-			<p className="page-title">Святкуйте з нами!</p>
 		</main>
 	);
 };

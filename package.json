@@ -11,6 +11,8 @@
 	},
 	"dependencies": {
 		"canvas-confetti": "^1.9.3",
+		"framer-motion": "^12.23.12",
+		"gsap": "^3.13.0",
 		"react": "^19.1.1",
 		"react-dom": "^19.1.1",
 		"react-router-dom": "^7.8.2",

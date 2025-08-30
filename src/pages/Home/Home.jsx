@@ -5,9 +5,9 @@ import "./Home.scss";
 const Home = () => {
 	return (
 		<main className="home">
-			{data.map((envelope) => {
+			{data.map((envelope, index) => {
 				return (
-					<NavLink to={`/envelope-${envelope.type}/${envelope.id}`}>
+					<NavLink key={index} to={`/envelope-${envelope.type}/${envelope.id}`}>
 						{envelope.id}
 					</NavLink>
 				);

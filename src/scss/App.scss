@@ -2,9 +2,24 @@
 @use "./reset";
 @use "./variables";
 
+html {
+	// background: var(--silver-bg-clr);
+}
+
 body {
 	font-family: "Great Vibes", cursive;
+	// font-family: "EB Garamond", serif;
+
+	// font-family: "Caveat", cursive;
+	// font-family: "Lobster", sans-serif;
+	// font-family: "Comfortaa", sans-serif;
+	// font-family: "Bad Script", cursive;
 	// height: 4000px;
-	color: var(--brown-clr);
-	background: #fff;
+	// color: var(--brown-clr);
+	// padding: 25px;
+	// background: var(--silver-bg-clr) !important;
+}
+
+::-webkit-scrollbar {
+	display: none;
 }
