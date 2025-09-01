@@ -19,13 +19,17 @@
 .envelope-txt {
 	position: absolute;
 	bottom: 100px;
-	font-size: clamp(1.5rem, 4vw, 2rem);
+	left: 10px;
+	right: 10px;
+	text-align: center;
+	font-size: clamp(1.25rem, 4vw, 1.5rem);
 }
 
 .envelope-inner {
 	position: relative;
 	max-width: 500px;
 	height: max-content;
+	cursor: pointer;
 	animation: animateEnvelopeInner 1s infinite;
 }
 
@@ -97,7 +101,7 @@
 }
 
 .card--active {
-	animation: animateCard 2s 2s forwards;
+	animation: animateCard 1s 2s forwards;
 }
 
 @keyframes animateCard {
@@ -117,43 +121,65 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 25px;
+	gap: 50px;
 	overflow: hidden;
 	width: 100%;
-	padding: 25px;
+	// padding: 25px;
+	padding-bottom: 50px;
 	background-color: var(--silver-bg-clr);
 	text-align: center;
 }
 
 .envelope-silver__top {
 	position: relative;
-	height: calc(100svh - 50px);
+	height: 100svh;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
 	width: 100%;
 	color: #000;
+	padding: 25px 25px 10px 25px;
+	z-index: 1;
+}
+
+.top-img {
+	// position: absolute;
+	// top: 0;
+	max-width: 600px;
+	width: 100%;
+}
+
+.build {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	max-width: 700px;
+	z-index: -1;
 }
 
 .scroll {
-	position: absolute;
+	// position: absolute;
 	font-size: 0.75rem;
 	color: rgba(0, 0, 0, 0.5);
-	bottom: 25px;
+	// bottom: 25px;
 }
 
 .scroll--hide {
-	display: none;
+	// display: none;
+	opacity: 0 !important;
+	pointer-events: none !important;
 }
 
 .animated-element {
 	opacity: 0;
-	transition: opacity 1s;
+	transform: scale(0.5);
+	transition: all 1s;
 }
 
 .animated-element--active {
 	opacity: 1;
+	transform: scale(1);
 }
 
 .envelope-silver__top-date {
@@ -168,7 +194,7 @@
 }
 
 .font {
-	font-family: "Lora", serif;
+	font-family: "Great Vibes", cursive;
 }
 
 .desc {
@@ -186,11 +212,11 @@
 	align-items: center;
 
 	span:nth-child(1) {
-		transform: translate(30%, -25%);
+		transform: translate(35%, -25%);
 	}
 
 	span:nth-child(2) {
-		transform: translate(-30%, 25%);
+		transform: translate(-35%, 25%);
 	}
 }
 
@@ -213,10 +239,14 @@
 }
 
 .envelope-silver__top-title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: clamp(3rem, 8vw, 6rem);
+	font-size: clamp(3rem, 14vw, 6rem);
 	span:nth-child(1) {
 		transform: translate(10%, -40%);
 	}
@@ -242,16 +272,17 @@
 .frame {
 	position: relative;
 	width: 100%;
-	border: 5px solid #000;
-	outline: 2.5px solid #000;
-	outline-offset: -25px;
-	padding: 75px;
+	// border: 5px solid #000;
+	// outline: 2.5px solid #000;
+	// outline-offset: -25px;
+	// padding: 75px;
 }
 
 .frame-inner {
 	display: flex;
 	flex-direction: column;
 	row-gap: 50px;
+	padding: 0 10px;
 }
 
 .silver-swiper {
@@ -276,12 +307,11 @@
 
 	div:nth-of-type(-n + 7) {
 		border-bottom: 1px solid #000;
-		font-weight: 700;
+		font-weight: 500;
 	}
 }
 
 .silver-calendar-wrapper {
-	font-family: "Lora", serif;
 	align-self: center;
 	width: 100%;
 	max-width: 500px;
@@ -291,7 +321,7 @@
 
 .silver-calendar-top {
 	text-align: left;
-	font-weight: 700;
+	font-weight: 500;
 }
 
 .target-time {
@@ -317,7 +347,8 @@
 
 	span:nth-child(1) {
 		text-align: center;
-		font-weight: 700;
+		// font-weight: 700;
+		font-weight: 500;
 		font-size: clamp(3rem, 8vw, 6rem);
 	}
 
@@ -343,44 +374,47 @@
 	flex-direction: column;
 }
 
+.address-img {
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
 .silver-map {
 	height: 400px;
 }
 
-.corner-top-right {
-	position: absolute;
-	top: 25px;
-	right: 25px;
-	width: 75px;
-}
-.corner-top-left {
-	position: absolute;
-	top: 25px;
-	left: 25px;
-	width: 75px;
+// .corner-top-right {
+// 	position: absolute;
+// 	top: 25px;
+// 	right: 25px;
+// 	width: 75px;
+// }
+// .corner-top-left {
+// 	position: absolute;
+// 	top: 25px;
+// 	left: 25px;
+// 	width: 75px;
+// 	transform: rotate(-90deg);
+// }
 
-	transform: rotate(-90deg);
-}
+// .corner-bottom-right {
+// 	position: absolute;
+// 	bottom: 25px;
+// 	right: 25px;
+// 	width: 75px;
+// 	transform: rotate(90deg);
+// }
 
-.corner-bottom-right {
-	position: absolute;
-	bottom: 25px;
-	right: 25px;
-	width: 75px;
-	transform: rotate(90deg);
-}
-
-.corner-bottom-left {
-	position: absolute;
-	bottom: 25px;
-	left: 25px;
-	width: 75px;
-
-	transform: rotate(180deg);
-}
+// .corner-bottom-left {
+// 	position: absolute;
+// 	bottom: 25px;
+// 	left: 25px;
+// 	width: 75px;
+// 	transform: rotate(180deg);
+// }
 
 .silver-address__link {
-	font-family: "Lora", serif;
 	color: #000;
 	width: 100%;
 	padding: 10px;
@@ -396,61 +430,60 @@
 @media screen and (width <= 808px) {
 	.frame {
 		width: 100%;
-		border: 5px solid #000;
-		outline: 2.5px solid #000;
-		outline-offset: -12.5px;
-		padding: 75px 25px;
+		// border: 5px solid #000;
+		// outline: 2.5px solid #000;
+		// outline-offset: -12.5px;
+		// padding: 75px 25px;
 	}
 
-	.corner-top-right {
-		position: absolute;
-		top: 12.5px;
-		right: 12.5px;
-		width: 50px;
-	}
-	.corner-top-left {
-		position: absolute;
-		top: 12.5px;
-		left: 12.5px;
-		width: 50px;
-		transform: rotate(-90deg);
-	}
+	// .corner-top-right {
+	// 	position: absolute;
+	// 	top: 12.5px;
+	// 	right: 12.5px;
+	// 	width: 50px;
+	// }
+	// .corner-top-left {
+	// 	position: absolute;
+	// 	top: 12.5px;
+	// 	left: 12.5px;
+	// 	width: 50px;
+	// 	transform: rotate(-90deg);
+	// }
 
-	.corner-bottom-right {
-		position: absolute;
-		bottom: 12.5px;
-		right: 12.5px;
-		width: 50px;
-		transform: rotate(90deg);
-	}
+	// .corner-bottom-right {
+	// 	position: absolute;
+	// 	bottom: 12.5px;
+	// 	right: 12.5px;
+	// 	width: 50px;
+	// 	transform: rotate(90deg);
+	// }
 
-	.corner-bottom-left {
-		position: absolute;
-		bottom: 12.5px;
-		left: 12.5px;
-		width: 50px;
-		transform: rotate(180deg);
-	}
+	// .corner-bottom-left {
+	// 	position: absolute;
+	// 	bottom: 12.5px;
+	// 	left: 12.5px;
+	// 	width: 50px;
+	// 	transform: rotate(180deg);
+	// }
 
 	.envelope-silver {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 12.5px;
 		overflow: hidden;
 		width: 100%;
-		padding: 12.5px;
+		// padding: 12.5px;
 	}
 
 	.envelope-silver__top {
-		height: calc(100svh - 25px);
+		// height: calc(100svh - 25px);
 		width: 100%;
 		display: flex;
 		color: #000;
-		border: 5px solid #000;
-		outline: 2.5px solid #000;
-		outline-offset: -12.5px;
-		padding: 50px;
+		// border: 5px solid #000;
+		// outline: 2.5px solid #000;
+		// outline-offset: -12.5px;
+		// padding: 50px;
 	}
 
 	.home__top-date {

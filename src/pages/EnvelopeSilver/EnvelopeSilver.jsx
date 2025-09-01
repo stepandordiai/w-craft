@@ -11,6 +11,9 @@ import envelopeBottom from "/envelope/envelope-bottom.svg";
 import envelopeTop from "/envelope/envelope-top.svg";
 import card from "/card.png";
 import Header from "../../components/Header/Header";
+import lemonBranchImg from "/lemon.png";
+import build from "/build.png";
+import benket from "/benket.png";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -66,7 +69,7 @@ const EnvelopeSilver = () => {
 			animatedElements.forEach((el) => {
 				const elRect = el.getBoundingClientRect();
 
-				if (elRect.top < window.innerHeight - 100) {
+				if (elRect.top < window.innerHeight) {
 					el.classList.add("animated-element--active");
 				}
 			});
@@ -75,7 +78,7 @@ const EnvelopeSilver = () => {
 		animatedElements.forEach((el) => {
 			const elRect = el.getBoundingClientRect();
 
-			if (elRect.top < window.innerHeight - 100) {
+			if (elRect.top < window.innerHeight) {
 				el.classList.add("animated-element--active");
 			}
 		});
@@ -223,15 +226,26 @@ const EnvelopeSilver = () => {
 			</div>
 			<main className="envelope-silver">
 				<div className="envelope-silver__top frame">
-					<img className="corner-top-right" src={img} alt="" />
+					{/* <img className="corner-top-right" src={img} alt="" />
 					<img className="corner-bottom-right" src={img} alt="" />
 					<img className="corner-bottom-left" src={img} alt="" />
-					<img className="corner-top-left" src={img} alt="" />
+					<img className="corner-top-left" src={img} alt="" /> */}
 
-					<div className="envelope-silver__top-logo animated-element">
-						<span>{envelope.name_1[0]}</span>
-						<span>{envelope.name_2[0]}</span>
+					<div
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+						}}
+					>
+						<div className="envelope-silver__top-logo">
+							<span>{envelope.name_1[0]}</span>
+							<span>{envelope.name_2[0]}</span>
+						</div>
+						<img className="top-img" src={lemonBranchImg} alt="" />
 					</div>
+
 					{/* <div className="divider"></div> */}
 					{/* <div className="home__top-date">
 						<p>{envelope.date}</p>
@@ -242,28 +256,28 @@ const EnvelopeSilver = () => {
 					</div> */}
 					{/* <div> */}
 					{/* <div> */}
-					<div className="envelope-silver__top-title animated-element">
+					<div className="envelope-silver__top-title font">
 						<span>{envelope.name_1}</span>
 						<span>та</span>
 						<span>{envelope.name_2}</span>
 					</div>
 					{/* <img className="underline" src={img2} alt="" /> */}
 					{/* </div> */}
-					<p className="envelope-silver__top-date animated-element">
+					{/* <p className="envelope-silver__top-date animated-element">
 						Неділя, 14 Вересня, 2025
-					</p>
-					<div className="font scroll animated-element">
-						Прокрутіть вниз, щоб дізнатися більше
-					</div>
+					</p> */}
+					<img className="build" src={build} alt="" />
+					<div className="scroll">Прокрутіть вниз, щоб дізнатися більше</div>
 				</div>
 				<div className="frame">
-					<img className="corner-top-right" src={img} alt="" />
+					{/* <img className="corner-top-right" src={img} alt="" />
 					<img className="corner-bottom-right" src={img} alt="" />
 					<img className="corner-bottom-left" src={img} alt="" />
-					<img className="corner-top-left" src={img} alt="" />
+					<img className="corner-top-left" src={img} alt="" /> */}
 					<div className="frame-inner">
-						<p className="m-size animated-element">Дорогі гості</p>
-						<p className="desc font animated-element">
+						{/* <img src={lemonBranchImg} alt="" /> */}
+						<p className="m-size animated-element font">Дорогі гості</p>
+						<p className="desc animated-element">
 							Ми надзвичайно раді поділитися з Вами цим особливим днем!
 							<br />
 							<br />
@@ -280,6 +294,9 @@ const EnvelopeSilver = () => {
 							розділити радість, сміх і любов цього дня.
 							<br />
 							<br />
+						</p>
+						<p className="envelope-silver__top-date animated-element">
+							Неділя, 14 Вересня, 2025
 						</p>
 						<div className="silver-calendar-wrapper animated-element">
 							<p className="silver-calendar-top">{`${txtMonth} ${envelope.year}`}</p>
@@ -310,34 +327,36 @@ const EnvelopeSilver = () => {
 								})}
 							</div>
 						</div>
-						<p className="s-size animated-element">
+						<p className="s-size animated-element font">
 							Давайте створимо спогади, які залишаться на все життя!
 						</p>
 					</div>
 				</div>
 				<div className="frame">
-					<img className="corner-top-right" src={img} alt="" />
+					{/* <img className="corner-top-right" src={img} alt="" />
 					<img className="corner-bottom-right" src={img} alt="" />
 					<img className="corner-bottom-left" src={img} alt="" />
-					<img className="corner-top-left" src={img} alt="" />
+					<img className="corner-top-left" src={img} alt="" /> */}
 					<div className="frame-inner">
-						<p className="m-size animated-element">
+						<img className="animated-element" src={lemonBranchImg} alt="" />
+
+						<p className="m-size animated-element font">
 							Зворотний відлік до нашого Великого дня
 						</p>
-						<div className="font silver-date animated-element" id="date">
-							<div>
+						<div className="silver-date" id="date">
+							<div className="animated-element">
 								<span>{days}</span>
 								<span>днів</span>
 							</div>
-							<div>
+							<div className="animated-element">
 								<span>{hours}</span>
 								<span>годин(а)</span>
 							</div>
-							<div>
+							<div className="animated-element">
 								<span>{minutes}</span>
 								<span>хвилин(а)</span>
 							</div>
-							<div>
+							<div className="animated-element">
 								<span>{seconds}</span>
 								<span>секунд(а)</span>
 							</div>
@@ -345,19 +364,26 @@ const EnvelopeSilver = () => {
 					</div>
 				</div>
 				<div className="frame">
-					<img className="corner-top-right" src={img} alt="" />
+					{/* <img className="corner-top-right" src={img} alt="" />
 					<img className="corner-bottom-right" src={img} alt="" />
 					<img className="corner-bottom-left" src={img} alt="" />
-					<img className="corner-top-left" src={img} alt="" />
+					<img className="corner-top-left" src={img} alt="" /> */}
 					<div className="frame-inner">
+						<img className="animated-element" src={lemonBranchImg} alt="" />
+
 						<div>
-							<p className="m-size animated-element">Адреси святкування</p>
-							<p className="font animated-element">{`(місцевий час, ${envelope.place})`}</p>
+							<p className="m-size animated-element font">Адреси святкування</p>
+							<p className="animated-element">{`(місцевий час, ${envelope.place})`}</p>
 						</div>
 						<div className="silver-addresses">
 							{envelope.adresess.map((address, index) => {
 								return (
 									<div key={index} className="silver-address">
+										<img
+											className="address-img animated-element"
+											src={benket}
+											alt=""
+										/>
 										<p
 											style={{
 												display: "flex",
@@ -369,13 +395,11 @@ const EnvelopeSilver = () => {
 											<span>{address.time}</span>
 										</p>
 										<br />
-										<p className="font animated-element">
-											{address.address_title}
-										</p>
+										<p className="animated-element">{address.address_title}</p>
 										<br />
 										<p
 											style={{ marginBottom: 10 }}
-											className="font animated-element"
+											className="animated-element"
 										>
 											{address.address}
 										</p>
@@ -414,12 +438,14 @@ const EnvelopeSilver = () => {
 				</div>
 			</div> */}
 				<div className="frame">
-					<img className="corner-top-right" src={img} alt="" />
+					{/* <img className="corner-top-right" src={img} alt="" />
 					<img className="corner-bottom-right" src={img} alt="" />
 					<img className="corner-bottom-left" src={img} alt="" />
-					<img className="corner-top-left" src={img} alt="" />
+					<img className="corner-top-left" src={img} alt="" /> */}
 					<div className="frame-inner">
-						<p className="m-size animated-element">Галерея</p>
+						<img className="animated-element" src={lemonBranchImg} alt="" />
+
+						<p className="m-size animated-element font">Галерея</p>
 						<Swiper
 							effect={"fade"}
 							loop={true}
@@ -442,12 +468,13 @@ const EnvelopeSilver = () => {
 					</div>
 				</div>
 				<div className="frame">
-					<img className="corner-top-right" src={img} alt="" />
-					<img className="corner-bottom-right" src={img} alt="" />
-					<img className="corner-bottom-left" src={img} alt="" />
-					<img className="corner-top-left" src={img} alt="" />
+					{/* <img className="corner-top-right" src={img} alt="" /> */}
+					{/* <img className="corner-bottom-right" src={img} alt="" /> */}
+					{/* <img className="corner-bottom-left" src={img} alt="" /> */}
+					{/* <img className="corner-top-left" src={img} alt="" /> */}
 					<div className="frame-inner">
-						<p className="m-size animated-element">
+						<img className="animated-element" src={lemonBranchImg} alt="" />
+						<p className="m-size animated-element font">
 							Ми з нетерпінням чекаємо, щоб відсвяткувати разом з вами!
 						</p>
 						<div className="envelope-silver__top-logo animated-element">

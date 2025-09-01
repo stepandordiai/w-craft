@@ -36,6 +36,7 @@
 
 .footer__author {
 	a {
+		display: inline-block;
 		color: #000;
 		text-decoration: underline solid var(--accent-clr) !important;
 	}
