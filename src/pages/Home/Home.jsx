@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import data from "./../../assets/data/data.json";
 import Header from "../../components/Header/Header";
 import "./Home.scss";
+import Options from "../../components/Options/Options";
 
 const Home = () => {
 	return (
@@ -22,6 +23,7 @@ const Home = () => {
 						</NavLink>
 					);
 				})}
+				<Options />
 			</main>
 		</>
 	);
