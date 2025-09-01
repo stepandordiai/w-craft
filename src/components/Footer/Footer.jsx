@@ -13,15 +13,16 @@ const Footer = () => {
 		<footer className="footer">
 			<button onClick={handleScrollToTop} className="footer__btn">
 				<span>Повернутись на початок</span>
-				<img src={arrowTopIcon} width={15} alt="" />
+				<div className="footer__btn-icon-wrapper">
+					<div className="footer__btn-icon-wrapper-inner">
+						<img src={arrowTopIcon} width={16} height={16} alt="" />
+						<img src={arrowTopIcon} width={16} height={16} alt="" />
+					</div>
+				</div>
 			</button>
-			<p>
-				Сайт від
-				<a
-					className="creator__link"
-					href="https://heeeyooo.studio/"
-					target="_blank"
-				>
+			<p className="footer__author">
+				Сайт від{" "}
+				<a href="https://heeeyooo.studio/" target="_blank">
 					heeeyooo studio
 				</a>
 			</p>

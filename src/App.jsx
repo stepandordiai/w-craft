@@ -1,9 +1,9 @@
 import Home from "./pages/Home/Home";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import EnvelopeBronze from "./pages/EnvelopeBronze/EnvelopeBronze";
-import "./scss/App.scss";
 import EnvelopeSilver from "./pages/EnvelopeSilver/EnvelopeSilver";
+import "./scss/App.scss";
 
 function App() {
 	return (
@@ -13,7 +13,6 @@ function App() {
 				<Route path="/envelope-bronze/:id" element={<EnvelopeBronze />} />
 				<Route path="/envelope-silver/:id" element={<EnvelopeSilver />} />
 			</Routes>
-
 			<Footer />
 		</Router>
 	);

@@ -10,6 +10,7 @@ import envelopeLeft from "/envelope/envelope-left.svg";
 import envelopeBottom from "/envelope/envelope-bottom.svg";
 import envelopeTop from "/envelope/envelope-top.svg";
 import card from "/card.png";
+import Header from "../../components/Header/Header";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -37,6 +38,7 @@ const EnvelopeSilver = () => {
 	const [hours, setHours] = useState(0);
 	const [minutes, setMinutes] = useState(0);
 	const [seconds, setSeconds] = useState(0);
+	const [showHeader, setShowHeader] = useState(false);
 
 	useEffect(() => {
 		let interval = setInterval(() => {
@@ -54,6 +56,7 @@ const EnvelopeSilver = () => {
 				setMinutes(0);
 				setSeconds(0);
 				handleClick();
+				setShowHeader(true);
 			}
 		}, 1000);
 
@@ -204,6 +207,7 @@ const EnvelopeSilver = () => {
 
 	return (
 		<>
+			{showHeader && <Header />}
 			<div className="envelope">
 				<div onClick={handleEnvelope} className="envelope-inner">
 					<img className="env-base" src={envelopeBase} alt="" />
