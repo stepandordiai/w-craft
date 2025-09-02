@@ -194,6 +194,8 @@ const EnvelopeSilver = () => {
 				scroll.classList.remove("scroll--hide");
 			}
 		});
+
+		document.body.style.overflow = "hidden";
 	}, []);
 
 	const handleEnvelope = (e) => {
