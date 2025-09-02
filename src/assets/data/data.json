@@ -27,7 +27,8 @@
 		],
 		"gallery": ["/01.JPG", "/02.JPG", "/03.JPG", "/04.JPG", "/05.JPG"],
 		"countdown": "2025-08-28T16:00:00",
-		"type": "bronze"
+		"type": "bronze",
+		"ss": ["/ss/bronze/01.png", "/ss/bronze/02.png"]
 	},
 	{
 		"id": "andrii-and-natali-ukraine",
@@ -49,6 +50,7 @@
 		],
 		"gallery": ["/01.JPG", "/02.JPG", "/03.JPG", "/04.JPG", "/05.JPG"],
 		"countdown": "2025-09-14T16:00:00",
-		"type": "silver"
+		"type": "silver",
+		"ss": ["/ss/silver/silver.png", "/ss/silver/silver1.png"]
 	}
 ]

@@ -1,0 +1,40 @@
+.templates {
+	padding: 0 25px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.templates__btn {
+	padding: 7.5px;
+	border: 1px solid #000;
+	border-radius: 20px;
+}
+
+.templates__btn--active {
+	background: var(--accent-clr);
+}
+
+.template {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.template__img-container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 25px;
+	padding: 50px;
+	border: 1px solid #000;
+	border-radius: 25px;
+	background: #f3f3f3;
+}
+
+.template__type {
+	padding: 7.5px;
+	border: 1px solid #000;
+	border-radius: 20px;
+}

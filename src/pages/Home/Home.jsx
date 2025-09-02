@@ -1,9 +1,8 @@
 import { Helmet } from "react-helmet-async";
-import { NavLink } from "react-router-dom";
-import data from "./../../assets/data/data.json";
 import Header from "../../components/Header/Header";
 import Options from "../../components/Options/Options";
 import { useEffect } from "react";
+import Templates from "../../components/Templates/Templates";
 import "./Home.scss";
 
 const Home = () => {
@@ -18,16 +17,7 @@ const Home = () => {
 			</Helmet>
 			<Header />
 			<main className="home">
-				{data.map((envelope, index) => {
-					return (
-						<NavLink
-							key={index}
-							to={`/envelope-${envelope.type}/${envelope.id}`}
-						>
-							{envelope.id}
-						</NavLink>
-					);
-				})}
+				<Templates />
 				<Options />
 			</main>
 		</>
