@@ -26,19 +26,17 @@ const Options = () => {
 							<div className="option__info-list">
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Ваші імена, фото та дата весілля</span>
+									<span>
+										Персональна сторінка з вашими іменами, фото та датою весілля
+									</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Адреса з відміткою на мапі</span>
+									<span>Інтерактивна мапа з адресою локації</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Сабдомен з вашими іменами</span>
-								</p>
-								<p>
-									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Кастомізація під стиль весілля</span>
+									<span>Індивідуальний дизайн у стилі свята</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
@@ -46,19 +44,11 @@ const Options = () => {
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Розпорядок дня</span>
+									<span>Зручний розклад подій</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Ваша історія кохання</span>
-								</p>
-								<p>
-									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Побажання щодо подарунків</span>
-								</p>
-								<p>
-									<img src={checkGrayIcon} width={20} height={20} alt="" />{" "}
-									<span>Підтримка декількох мов</span>
+									<span>Дрес-код</span>
 								</p>
 								<p>
 									<img src={checkGrayIcon} width={20} height={20} alt="" />{" "}
@@ -66,11 +56,11 @@ const Options = () => {
 								</p>
 								<p>
 									<img src={checkGrayIcon} width={20} height={20} alt="" />{" "}
-									<span>Кольорова гама весілля</span>
+									<span>Підтримка кількох мов</span>
 								</p>
 								<p>
 									<img src={checkGrayIcon} width={20} height={20} alt="" />{" "}
-									<span>Будь яка додаткова інформація</span>
+									<span>Додаткові розділи за бажанням</span>
 								</p>
 								<p>
 									<img src={checkGrayIcon} width={20} height={20} alt="" />{" "}
@@ -112,19 +102,17 @@ const Options = () => {
 							<div className="option__info-list">
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Ваші імена, фото та дата весілля</span>
+									<span>
+										Персональна сторінка з вашими іменами, фото та датою весілля
+									</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Адреса з відміткою на мапі</span>
+									<span>Інтерактивна мапа з адресою локації</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Сабдомен з вашими іменами</span>
-								</p>
-								<p>
-									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Кастомізація під стиль весілля</span>
+									<span>Індивідуальний дизайн у стилі свята</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
@@ -132,19 +120,11 @@ const Options = () => {
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Розпорядок дня</span>
+									<span>Зручний розклад подій</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Ваша історія кохання</span>
-								</p>
-								<p>
-									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Побажання щодо подарунків</span>
-								</p>
-								<p>
-									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Підтримка декількох мов</span>
+									<span>Підтримка кількох мов</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
@@ -152,11 +132,11 @@ const Options = () => {
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Кольорова гама весілля</span>
+									<span>Дрес-код</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Будь яка додаткова інформація</span>
+									<span>Додаткові розділи за бажанням</span>
 								</p>
 								<p>
 									<img src={checkGrayIcon} width={20} height={20} alt="" />{" "}
@@ -180,19 +160,17 @@ const Options = () => {
 							<div className="option__info-list">
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Ваші імена, фото та дата весілля</span>
+									<span>
+										Персональна сторінка з вашими іменами, фото та датою весілля
+									</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Адреса з відміткою на мапі</span>
+									<span>Інтерактивна мапа з адресою локації</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Сабдомен з вашими іменами</span>
-								</p>
-								<p>
-									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Кастомізація під стиль весілля</span>
+									<span>Індивідуальний дизайн у стилі свята</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
@@ -200,19 +178,11 @@ const Options = () => {
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Розпорядок дня</span>
+									<span>Зручний розклад подій</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Ваша історія кохання</span>
-								</p>
-								<p>
-									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Побажання щодо подарунків</span>
-								</p>
-								<p>
-									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Підтримка декількох мов</span>
+									<span>Підтримка кількох мов</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
@@ -220,11 +190,11 @@ const Options = () => {
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Кольорова гама весілля</span>
+									<span>Дрес-код</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
-									<span>Будь яка додаткова інформація</span>
+									<span>Додаткові розділи за бажанням</span>
 								</p>
 								<p>
 									<img src={checkAccentIcon} width={20} height={20} alt="" />{" "}
