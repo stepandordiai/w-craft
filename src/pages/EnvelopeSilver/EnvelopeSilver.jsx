@@ -14,6 +14,8 @@ import Header from "../../components/Header/Header";
 import lemonBranchImg from "/lemon.png";
 import build from "/build.png";
 import benket from "/benket.png";
+import playIcon from "/icons/play.png";
+import pauseIcon from "/icons/pause.png";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -42,6 +44,11 @@ const EnvelopeSilver = () => {
 	const [minutes, setMinutes] = useState(0);
 	const [seconds, setSeconds] = useState(0);
 	const [showHeader, setShowHeader] = useState(false);
+	const [playAudio, setPlayAudio] = useState(false);
+
+	const handlePlayAudio = () => {
+		setPlayAudio((prev) => !prev);
+	};
 
 	useEffect(() => {
 		let interval = setInterval(() => {
@@ -203,6 +210,7 @@ const EnvelopeSilver = () => {
 		document.querySelector(".env-top").classList.add("env-top--active");
 		document.querySelector(".card").classList.add("card--active");
 		document.querySelector(".envelope-txt").style.display = "none";
+		setPlayAudio((prev) => !prev);
 
 		setTimeout(() => {
 			document.querySelector(".envelope").classList.add("envelope--active");
@@ -426,19 +434,21 @@ const EnvelopeSilver = () => {
 					</div>
 				</div>
 
-				{/* <div className="colors-container">
-				<p className="page-title">Дрес-код</p>
-				<div>
-					<p className="pepe">
-						Будемо раді, якщо Ви підтримаєте кольорову гаму нашого весілля
-					</p>
-					<div className="colors">
-						<div></div>
-						<div></div>
-						<div></div>
+				<div className="frame">
+					<div className="frame-inner">
+						<p className="font m-size animated-element">Дрес-код</p>
+						<p className="desc animated-element">
+							Нам буде дуже приємно, якщо ви додасте у свій образ відтінки з
+							нашої весільної палітри.
+						</p>
+						<div className="colors-container animated-element">
+							<div style={{ background: "#bab86c" }}></div>
+							<div style={{ background: "#fff" }}></div>
+							<div style={{ background: "#F5F5DC" }}></div>
+							<div style={{ background: "#7B3F00" }}></div>
+						</div>
 					</div>
 				</div>
-			</div> */}
 				<div className="frame">
 					{/* <img className="corner-top-right" src={img} alt="" />
 					<img className="corner-bottom-right" src={img} alt="" />
@@ -486,6 +496,12 @@ const EnvelopeSilver = () => {
 					</div>
 				</div>
 			</main>
+			<button onClick={handlePlayAudio} className="floating-btn">
+				<img src={playAudio === false ? playIcon : pauseIcon} alt="" />
+			</button>
+			{envelope.song && playAudio && (
+				<audio autoPlay src={envelope.song}></audio>
+			)}
 		</>
 	);
 };
